@@ -8,17 +8,11 @@
 
 This project demonstrates a complete end-to-end NLP pipeline using HuggingFace Transformers, DistilBERT, and FastAPI.
 It includes:
-
 ✔ Dataset loading
-
 ✔ Tokenization
-
 ✔ Fine-tuning DistilBERT
-
 ✔ Saving the model
-
 ✔ Building a modern Bootstrap UI
-
 ✔ Deploying an API for real-time sentiment prediction
 
 
@@ -34,15 +28,12 @@ Ideal for learning NLP and running on free GPUs.
 - Optional FastAPI deployment  
 - Beginner‑friendly explanations
 
-
----
 📦 Installation
 
 1️⃣ Clone the repo
 ```bash
 git clone https://github.com/yourusername/DistilBERT_Sentiment_Repo.git
 cd DistilBERT_Sentiment_Repo
-
 ```
 ## 📁 Project Structure
 ```
@@ -71,16 +62,14 @@ pip install -r requirements.txt
 ```
 
 ---
-
-## 🏋️ Training (Kaggle Recommended)
+🏋️ Training (Kaggle Recommended)
 Use the Kaggle notebook for:
 - GPU acceleration  
 - FP16 mixed precision  
 - Fast dataset loading
-- 🧠 Training the Model
+- Training the Model
 
 Your dataset should look like:
-
 train.csv / test.csv
 text,label
 "I love this product!",1
@@ -88,49 +77,37 @@ text,label
 
 Run training:
 notebook-train/main.py
-
+```
+│── notebook_train/
+│   └── main.py
+```
 
 What happens:
-
 Tokenizer loads
-
 Dataset is tokenized
-
 DistilBERT is fine-tuned
-
 Metrics (Accuracy, F1) are computed
-
 Model is saved into ./results/
 
-
-
-
+📈 Model Performance
 
 After training you will see:
-
 Epoch 1/2 – Accuracy: 0.89, F1: 0.88
 Epoch 2/2 – Accuracy: 0.92, F1: 0.91
 
+
+
 🛠 Customization
-
 You can modify:
-
 Learning rate
-
 Batch size
-
 Number of labels
-
 Model architecture
 
 Or replace DistilBERT with:
-
 BERT-base
-
 RoBERTa
-
 DeBERTa
-
 ALBERT
 
 ## 🔍 Inference
@@ -141,20 +118,11 @@ pipe = pipeline("sentiment-analysis", model="./results")
 print(pipe("This movie was great!"))
 ```
 
----
-
 ## 🌐 FastAPI Deployment
 Run:
 ```bash
 uvicorn app:app --reload
 ```
-
-🌐 Running the Web App
-
-Start the FastAPI server:
-
-uvicorn app:app --reload
-
 
 Now visit:
 
@@ -165,17 +133,11 @@ http://127.0.0.1:8000/ui
 http://127.0.0.1:8000/docs
 
 ✨ UI Preview (Description)
-
 Input box for text
-
 Bootstrap card layout
-
 Color-coded results:
-
 Green = Positive 🙂
-
 Red = Negative 😡
-
 Orange = Neutral 😐
 
 🧪 Example Predictions
@@ -183,11 +145,9 @@ Text	Output
 “I love this!”	POSITIVE 🙂
 “This is the worst.”	NEGATIVE 😡
 “It works.”	NEUTRAL 😐
-📈 Model Performance
 
 
-📤 Deployment Options
-
+📤 Additional Deployment Options
 You can deploy this app on:
 
 🔹 HuggingFace Spaces (Free)
@@ -199,47 +159,28 @@ Supports Gradio & FastAPI
 Production + scaling
 
 🔹 Docker
+```bash
 docker build -t sentiment-app .
 docker run -p 8000:8000 sentiment-app
+```
 
 ❤️ Credits
-
 Built using:
-
 HuggingFace Transformers
-
 FastAPI
-
 Bootstrap
-
 PyTorch
 
 ⭐ Contribute
 
 Pull requests welcome!
 You can:
-
 Improve UI
-
 Add datasets
-
 Add multi-language support
-
 Add ONNX optimization
 
 
-
----
-
-
----
-
-
-
----
-
-
----
 
 ## 📝 License
 MIT License
